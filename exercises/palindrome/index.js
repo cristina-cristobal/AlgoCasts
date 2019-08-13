@@ -7,6 +7,15 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+palindrome = (str) => {
+  x = str.toString().split('')        //converts integers to strings and then splits string into array
+  let len = x.length                  // saves array length as variable
+  for (let i=0; i<len/2; i++){        // starts loop at index 0 until midway point, increasing by 1
+    if (x[i] !== x[len-1-i]){         // in loop, returns false if x[i] !== as mirroring position starting from -1
+      return false
+    }
+  }
+  return true                         // otherwise returns true
+}
 
 module.exports = palindrome;
